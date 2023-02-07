@@ -102,6 +102,11 @@ def solve_dijkstra(start_node, end_node, net: List[int], vertex_list: list):
 def return_shortest_path(table: list, start_node: str, end_node: str) -> list:
     '''Returns shortest path with vertexes in the correct sequence
     ex: ["A","C","D"]. List in input is a list of ScoreNodes objects'''
+    
+    #Case of trivial solution
+    if start_node == end_node:
+        return [start_node]
+    
     #path initialization whith end node
     first = find_node_in_list(table, end_node)
     path = [first.name]

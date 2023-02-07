@@ -3,7 +3,7 @@
 import string
 import random
 import networkx as nx
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 
 
@@ -70,17 +70,17 @@ def create_adjacency_dict(edges: list, vertex_list: list) -> dict:
 def create_network_G_graph(edges: list):
     '''Creates network with networkx module'''
     
-    # plt.figure(figsize=(7,7))
+    plt.figure(figsize=(7,7))
     
     G = nx.DiGraph()
     G.add_weighted_edges_from(edges)
-    # pos = nx.spring_layout(G)
-    # nx.draw(G, pos, with_labels = True)
-    # edge_weight = nx.get_edge_attributes(G, 'weight')
-    # nx.draw_networkx_edge_labels(G, pos, edge_labels = edge_weight)
+    pos = nx.spring_layout(G)
+    nx.draw(G, pos, with_labels = True)
+    edge_weight = nx.get_edge_attributes(G, 'weight')
+    nx.draw_networkx_edge_labels(G, pos, edge_labels = edge_weight)
     
-    # plt.savefig('graph.png', dpi = 200)
-    # plt.show()
+    plt.savefig('graph.png', dpi = 200)
+    plt.show()
     
     return G
 
